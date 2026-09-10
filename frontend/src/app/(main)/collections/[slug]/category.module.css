@@ -1,0 +1,171 @@
+.pageWrapper {
+  min-height: calc(100vh - var(--header-height));
+  background-color: var(--bg-body);
+  padding-bottom: var(--space-20);
+}
+
+.banner {
+  background-color: var(--bg-warm);
+  padding: var(--space-16) var(--space-6);
+  text-align: center;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: var(--space-8);
+}
+
+.bannerContent {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  color: var(--primary-darker);
+  margin-bottom: var(--space-4);
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.controlsBar {
+  max-width: var(--container-max);
+  margin: 0 auto var(--space-8);
+  padding: 0 var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.loadingContainer, .errorContainer, .emptyState {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-secondary);
+  padding: var(--space-12);
+}
+
+.grid {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 4/5;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-body);
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.productCard:hover .productImage {
+  transform: scale(1.05);
+}
+
+.wishlistBtn {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.wishlistBtn:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.quickAdd {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4);
+  transform: translateY(100%);
+  transition: transform var(--transition-fast);
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+}
+
+.productCard:hover .quickAdd {
+  transform: translateY(0);
+}
+
+.quickAddBtn {
+  width: 100%;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.quickAddBtn:hover {
+  background-color: var(--primary-dark);
+}
+
+.productInfo {
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.productName {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--primary-darker);
+  margin-bottom: var(--space-2);
+}
+
+.price {
+  font-size: var(--text-base);
+  color: var(--primary-darker);
+  font-weight: 500;
+}

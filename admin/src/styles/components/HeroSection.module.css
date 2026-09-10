@@ -1,0 +1,237 @@
+.hero {
+  padding: var(--space-12) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.badgeWrapper {
+  margin-bottom: var(--space-6);
+}
+
+.topBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  background: var(--bg-warm);
+  color: var(--primary);
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--primary-darker);
+  margin-bottom: var(--space-6);
+}
+
+.description {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-8);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+.ctaBtn {
+  background: var(--primary-darker);
+  border-color: var(--primary-darker);
+}
+
+.ctaBtn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.trustBadges {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-8);
+}
+
+.trustBadge {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.trustIcon {
+  color: var(--accent-saffron);
+  flex-shrink: 0;
+}
+
+.trustTitle {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.trustDesc {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.imageCol {
+  flex: 1.2;
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.heroImage {
+  width: 100%;
+  height: 640px;
+  object-fit: cover;
+}
+
+.featuredCard {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 90%;
+  max-width: 460px;
+  box-shadow: var(--shadow-lg);
+}
+
+.featuredIconWrapper {
+  background: var(--bg-section-alt);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--primary-dark);
+}
+
+.featuredTag {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-saffron);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.featuredTitle {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.featuredDesc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .content {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 3.5rem;
+  }
+  
+  .actions {
+    justify-content: center;
+  }
+  
+  .trustBadges {
+    justify-content: center;
+  }
+  
+  .imageWrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .ctaBtn, .secondaryBtn {
+    width: 100%;
+  }
+  
+  .trustBadges {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  
+  .trustBadge {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .heroImage {
+    height: 400px;
+  }
+  
+  .featuredCard {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-4);
+  }
+}

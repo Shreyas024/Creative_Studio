@@ -1,0 +1,119 @@
+.bar {
+  background: var(--primary-darker);
+  color: var(--text-on-dark);
+  height: var(--announcement-height);
+  display: flex;
+  align-items: center;
+  font-size: var(--text-xs);
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.currency {
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.divider {
+  opacity: 0.3;
+}
+
+.link {
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity var(--transition-fast);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.center {
+  flex: 1;
+  overflow: hidden;
+  margin: 0 var(--space-6);
+}
+
+.marqueeWrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeWrapper::before,
+.marqueeWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marqueeWrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--primary-darker), transparent);
+}
+
+.marqueeWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--primary-darker), transparent);
+}
+
+.marquee {
+  display: flex;
+  gap: 0;
+  animation: marquee 30s linear infinite;
+  white-space: nowrap;
+}
+
+.marqueeItem {
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0 var(--space-2);
+}
+
+.dot {
+  margin: 0 var(--space-3);
+  opacity: 0.5;
+  color: var(--accent-gold);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .left, .right {
+    display: none;
+  }
+  .center {
+    margin: 0;
+  }
+}
